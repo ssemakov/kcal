@@ -15,9 +15,9 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@components/*": ["./*"]
+      "@*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Dropdown.js"],
   "exclude": ["node_modules"]
 }
