@@ -18,24 +18,30 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-44">
         <article className="prose prose-slate pt-4">
           <h1 className="text-3xl">Calories calculator</h1>
           <p>How it works explanation</p>
         </article>
 
         <div className="py-5 sm:py-6">
-          <div className="grid grid-cols-1 gap-5">
-            <Input
-              id="prepared_weight"
-              placeholder="0.0"
-              label="Total cooked weight"
-              Adornment={WeightUnitsAdornment}
-            />
-            <Input id="kcal" placeholder="0.0" label="Total calories" />
-            <Input id="protein" placeholder="0.0" label="Protein" />
-            <Input id="carbs" placeholder="0.0" label="Carbs" />
-            <Input id="fat" placeholder="0.0" label="Fat" />
+          <div className="grid gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2">
+              <Input
+                id="prepared_weight"
+                placeholder="0.0"
+                label="Total cooked weight"
+                Adornment={WeightUnitsAdornment}
+              />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2">
+              <Input id="kcal" placeholder="0.0" label="Total calories" />
+            </div>
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+              <Input id="protein" placeholder="0.0" label="Protein" />
+              <Input id="carbs" placeholder="0.0" label="Carbs" />
+              <Input id="fat" placeholder="0.0" label="Fat" />
+            </div>
             <div className="py-8">
               <Button type="submit" title="Calculate" />
             </div>
