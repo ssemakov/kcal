@@ -3,9 +3,7 @@ import Image from "next/image";
 
 import { Inter } from "next/font/google";
 import styles from "@styles/Home.module.css";
-import Button from "@components/Button";
-import Input from "@components/Input";
-import WeightUnitsAdornment from "@components/WeightUnitsAdornment";
+import MacrosCalculator from "@components/MacrosCalculator";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,30 +21,7 @@ export default function Home() {
           <h1 className="text-3xl">Calories calculator</h1>
           <p>How it works explanation</p>
         </article>
-
-        <div className="py-5 sm:py-6">
-          <div className="grid gap-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2">
-              <Input
-                id="prepared_weight"
-                placeholder="0.0"
-                label="Total cooked weight"
-                Adornment={WeightUnitsAdornment}
-              />
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2">
-              <Input id="kcal" placeholder="0.0" label="Total calories" />
-            </div>
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-              <Input id="protein" placeholder="0.0" label="Protein" />
-              <Input id="carbs" placeholder="0.0" label="Carbs" />
-              <Input id="fat" placeholder="0.0" label="Fat" />
-            </div>
-            <div className="py-8">
-              <Button type="submit" title="Calculate" />
-            </div>
-          </div>
-        </div>
+        <MacrosCalculator />
       </div>
     </>
   );
