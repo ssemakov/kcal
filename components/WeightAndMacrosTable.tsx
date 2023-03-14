@@ -21,11 +21,11 @@ export default function WeightAndMacrosTable({
       >
         <thead className="bg-gray-200 text-xs">
           <tr>
-            <th className="p-3 uppercase">Weight</th>
-            <th className="p-3 uppercase">Calories</th>
-            <th className="p-3 uppercase">Protein</th>
-            <th className="p-3 uppercase">Fat</th>
-            <th className="p-3 uppercase">Carbs</th>
+            <th className="p-3 uppercase">Weight (gram)</th>
+            <th className="p-3 uppercase">Calories (kCal)</th>
+            <th className="p-3 uppercase">Protein (gram)</th>
+            <th className="p-3 uppercase">Fat (gram)</th>
+            <th className="p-3 uppercase">Carbs (gram)</th>
           </tr>
         </thead>
         <tbody>

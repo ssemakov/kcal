@@ -23,14 +23,15 @@ export default function Input({
       >
         {label}
       </label>
-      <div className="relative mt-2 rounded-md shadow-sm">
+      <div className="group relative mt-2 rounded-md shadow-sm">
         <input
           id={id}
           type={type}
           placeholder={placeholder}
           className="block w-full rounded-md border-0 py-1.5 pl-5 pr-20 text-gray-900 ring-1
             ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2
-              focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              group-focus:ring-inset group-focus:ring-indigo-600
+                sm:text-sm sm:leading-6"
           onChange={onChange}
         />
         {Adornment && <Adornment />}
@@ -46,8 +47,9 @@ export interface StaticAdornmentProps {
 export function RightStaticAdornment({ text }: StaticAdornmentProps) {
   return (
     <div
-      className="absolute inset-y-0 right-5 flex w-11 items-center justify-start border-l border-gray-300
-       pl-3 sm:text-sm"
+      className="absolute inset-y-0 right-5 flex w-11 items-center justify-start
+       border-l border-gray-300 pl-3 group-focus:border-indigo-600
+       sm:text-sm"
     >
       <span className="text-gray-500 sm:text-sm">{text}</span>
     </div>
