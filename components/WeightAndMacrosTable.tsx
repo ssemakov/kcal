@@ -14,27 +14,36 @@ export default function WeightAndMacrosTable({
   values,
 }: WeightAndMacrosTableProps) {
   return (
-    <table className="w-full table-auto">
-      <thead>
-        <tr>
-          <th>Weight</th>
-          <th>Calories</th>
-          <th>Protein</th>
-          <th>Fat</th>
-          <th>Carbs</th>
-        </tr>
-      </thead>
-      <tbody>
-        {values.map((value, index) => (
-          <tr key={index}>
-            <td>{value.weight}</td>
-            <td>{value.calories}</td>
-            <td>{value.protein}</td>
-            <td>{value.fat}</td>
-            <td>{value.carbs}</td>
+    <div className="relative overflow-x-auto">
+      <table
+        className="w-full table-auto
+        text-left text-gray-700"
+      >
+        <thead className="bg-gray-200 text-xs">
+          <tr>
+            <th className="p-3 uppercase">Weight</th>
+            <th className="p-3 uppercase">Calories</th>
+            <th className="p-3 uppercase">Protein</th>
+            <th className="p-3 uppercase">Fat</th>
+            <th className="p-3 uppercase">Carbs</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {values.map((value, index) => (
+            <tr
+              key={index}
+              className="whitespace-nowrap border-b bg-white font-medium text-gray-800
+                last:border-b-0"
+            >
+              <td className="p-3">{value.weight}</td>
+              <td className="p-3">{value.calories}</td>
+              <td className="p-3">{value.protein}</td>
+              <td className="p-3">{value.fat}</td>
+              <td className="p-3">{value.carbs}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
