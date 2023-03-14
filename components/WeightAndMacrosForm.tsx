@@ -1,5 +1,5 @@
 import Button from "@components/Button";
-import Input from "@components/Input";
+import Input, { RightStaticAdornment } from "@components/Input";
 import WeightUnitsAdornment from "@components/WeightUnitsAdornment";
 
 export interface OnChangeParams {
@@ -31,7 +31,7 @@ export default function WeightAndMacrosForm({
             placeholder="0.0"
             label="Total cooked weight"
             type="number"
-            Adornment={WeightUnitsAdornment}
+            Adornment={() => <RightStaticAdornment text="gram" />}
             onChange={handleOnChange}
           />
         </div>
@@ -42,6 +42,7 @@ export default function WeightAndMacrosForm({
             type="number"
             label="Total calories"
             onChange={handleOnChange}
+            Adornment={() => <RightStaticAdornment text="kCal" />}
           />
         </div>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
@@ -51,6 +52,7 @@ export default function WeightAndMacrosForm({
             type="number"
             label="Protein"
             onChange={handleOnChange}
+            Adornment={() => <RightStaticAdornment text="gram" />}
           />
           <Input
             id="fat"
@@ -58,6 +60,7 @@ export default function WeightAndMacrosForm({
             type="number"
             label="Fat"
             onChange={handleOnChange}
+            Adornment={() => <RightStaticAdornment text="gram" />}
           />
           <Input
             id="carbs"
@@ -65,11 +68,9 @@ export default function WeightAndMacrosForm({
             type="number"
             label="Carbs"
             onChange={handleOnChange}
+            Adornment={() => <RightStaticAdornment text="gram" />}
           />
         </div>
-        {/* <div className="py-8">
-          <Button type="submit" title="Calculate" onClick={onSubmit} />
-        </div> */}
       </div>
     </div>
   );

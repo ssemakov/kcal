@@ -38,3 +38,18 @@ export default function Input({
     </div>
   );
 }
+
+export interface StaticAdornmentProps {
+  text: string;
+}
+
+export function RightStaticAdornment({ text }: StaticAdornmentProps) {
+  return (
+    <div
+      className="absolute inset-y-0 right-5 flex w-11 items-center justify-start border-l border-gray-300
+       pl-3 sm:text-sm"
+    >
+      <span className="text-gray-500 sm:text-sm">{text}</span>
+    </div>
+  );
+}
