@@ -34,7 +34,7 @@ export default function WeightAndMacrosForm({
             placeholder="0.0"
             label="Total weight of the cooked product"
             type="number"
-            RightAdornment={() => <RightStaticAdornment text="gram" />}
+            RightAdornment={() => <RightStaticAdornment text="grams" />}
             onChange={handleOnChange}
           />
         </div>

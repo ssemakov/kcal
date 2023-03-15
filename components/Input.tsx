@@ -50,7 +50,7 @@ export interface StaticAdornmentProps {
 export function RightStaticAdornment({ text }: StaticAdornmentProps) {
   return (
     <div
-      className="absolute inset-y-0 right-5 flex w-11 items-center justify-start
+      className="absolute inset-y-0 right-3 flex items-center justify-start
        border-l border-gray-300 pl-3 group-focus:border-indigo-600
        sm:text-sm"
     >
