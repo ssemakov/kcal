@@ -1,13 +1,27 @@
 import Head from "next/head";
 import Image from "next/image";
-
+import { Accordion } from "flowbite-react";
 import { Inter } from "next/font/google";
 import styles from "@styles/Home.module.css";
 import MacrosCalculator from "@components/MacrosCalculator";
+import { getContent, ContentData } from "@lib/content";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+interface ContentProps {
+  description: ContentData;
+}
+export async function getStaticProps(): Promise<{ props: ContentProps }> {
+  const description = await getContent("app_description");
+
+  return {
+    props: {
+      description,
+    },
+  };
+}
+
+export default function Home({ description }: ContentProps) {
   return (
     <>
       <Head>
@@ -17,11 +31,24 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container mx-auto px-4 sm:px-6 lg:px-44">
-        <article className="prose prose-slate pt-4">
-          <h1 className="text-3xl">Calories calculator</h1>
-          <p>How it works explanation</p>
+        <article className="prose prose-gray py-8 prose-p:indent-4">
+          <h2>Prepared dish calories and macros calculator</h2>
         </article>
-        <MacrosCalculator />
+        <Accordion collapseAll={true} alwaysOpen={true} flush={true}>
+          <Accordion.Panel className="py-0">
+            <Accordion.Title>What is it?</Accordion.Title>
+            <Accordion.Content>
+              <article className="prose prose-gray pt-4 prose-p:indent-4">
+                <div
+                  dangerouslySetInnerHTML={{ __html: description.contentHtml }}
+                />
+              </article>
+            </Accordion.Content>
+          </Accordion.Panel>
+        </Accordion>
+        <div className="pt-2 sm:pt-8">
+          <MacrosCalculator />
+        </div>
       </div>
     </>
   );
