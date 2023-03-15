@@ -3,7 +3,8 @@ export interface InputProps {
   placeholder: string;
   label?: string;
   type?: "text" | "number";
-  Adornment?: React.ComponentType;
+  RightAdornment?: React.ComponentType;
+  BottomAdornment?: React.ComponentType;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -12,7 +13,8 @@ export default function Input({
   placeholder,
   label,
   type = "text",
-  Adornment,
+  RightAdornment,
+  BottomAdornment,
   onChange,
 }: InputProps) {
   return (
@@ -34,8 +36,9 @@ export default function Input({
                 sm:text-sm sm:leading-6"
           onChange={onChange}
         />
-        {Adornment && <Adornment />}
+        {RightAdornment && <RightAdornment />}
       </div>
+      {BottomAdornment && <BottomAdornment />}
     </div>
   );
 }
@@ -53,5 +56,13 @@ export function RightStaticAdornment({ text }: StaticAdornmentProps) {
     >
       <span className="text-gray-500 sm:text-sm">{text}</span>
     </div>
+  );
+}
+
+export function BottomStaticAdornment({ text }: StaticAdornmentProps) {
+  return (
+    <p className="mt-1 text-sm text-gray-300 contrast-more:text-gray-900">
+      {text}
+    </p>
   );
 }

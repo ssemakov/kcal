@@ -1,5 +1,8 @@
 import Button from "@components/Button";
-import Input, { RightStaticAdornment } from "@components/Input";
+import Input, {
+  BottomStaticAdornment,
+  RightStaticAdornment,
+} from "@components/Input";
 import WeightUnitsAdornment from "@components/WeightUnitsAdornment";
 
 export interface OnChangeParams {
@@ -29,9 +32,9 @@ export default function WeightAndMacrosForm({
           <Input
             id="weight"
             placeholder="0.0"
-            label="Total cooked weight"
+            label="Total weight of the cooked product"
             type="number"
-            Adornment={() => <RightStaticAdornment text="gram" />}
+            RightAdornment={() => <RightStaticAdornment text="gram" />}
             onChange={handleOnChange}
           />
         </div>
@@ -42,7 +45,8 @@ export default function WeightAndMacrosForm({
             type="number"
             label="Total calories"
             onChange={handleOnChange}
-            Adornment={() => <RightStaticAdornment text="kCal" />}
+            RightAdornment={() => <RightStaticAdornment text="kCal" />}
+            BottomAdornment={CombinedRawTipAdornment}
           />
         </div>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
@@ -52,7 +56,8 @@ export default function WeightAndMacrosForm({
             type="number"
             label="Protein"
             onChange={handleOnChange}
-            Adornment={() => <RightStaticAdornment text="gram" />}
+            RightAdornment={() => <RightStaticAdornment text="grams" />}
+            BottomAdornment={CombinedRawTipAdornment}
           />
           <Input
             id="fat"
@@ -60,7 +65,8 @@ export default function WeightAndMacrosForm({
             type="number"
             label="Fat"
             onChange={handleOnChange}
-            Adornment={() => <RightStaticAdornment text="gram" />}
+            RightAdornment={() => <RightStaticAdornment text="grams" />}
+            BottomAdornment={CombinedRawTipAdornment}
           />
           <Input
             id="carbs"
@@ -68,10 +74,15 @@ export default function WeightAndMacrosForm({
             type="number"
             label="Carbs"
             onChange={handleOnChange}
-            Adornment={() => <RightStaticAdornment text="gram" />}
+            RightAdornment={() => <RightStaticAdornment text="grams" />}
+            BottomAdornment={CombinedRawTipAdornment}
           />
         </div>
       </div>
     </div>
   );
+}
+
+function CombinedRawTipAdornment() {
+  return <BottomStaticAdornment text="combined raw ingredients" />;
 }
