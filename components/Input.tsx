@@ -30,6 +30,7 @@ export default function Input({
           id={id}
           type={type}
           placeholder={placeholder}
+          data-testid={id}
           className="block w-full rounded-md border-0 py-1.5 pl-5 pr-20 text-gray-900 ring-1
             ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2
               group-focus:ring-inset group-focus:ring-indigo-600

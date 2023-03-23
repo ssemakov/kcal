@@ -1,6 +1,6 @@
-<!-- ---
+---
 title: 'What is it?'
---- -->
+---
 
 This basic application is designed to make it easy to calculate the calories and macros (protein/fat/carbs) per 100 grams of a cooked dish.
 
