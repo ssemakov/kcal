@@ -35,11 +35,21 @@ export default function WeightAndMacrosTable({
               className="whitespace-nowrap border-b bg-white font-medium text-gray-800
                 last:border-b-0"
             >
-              <td className="p-3">{value.weight}</td>
-              <td className="p-3">{value.calories}</td>
-              <td className="p-3">{value.protein}</td>
-              <td className="p-3">{value.fat}</td>
-              <td className="p-3">{value.carbs}</td>
+              <td data-testid={`weight-${index}`} className="p-3">
+                {value.weight}
+              </td>
+              <td data-testid={`calories-${index}`} className="p-3">
+                {value.calories}
+              </td>
+              <td data-testid={`protein-${index}`} className="p-3">
+                {value.protein}
+              </td>
+              <td data-testid={`fat-${index}`} className="p-3">
+                {value.fat}
+              </td>
+              <td data-testid={`carbs-${index}`} className="p-3">
+                {value.carbs}
+              </td>
             </tr>
           ))}
         </tbody>
