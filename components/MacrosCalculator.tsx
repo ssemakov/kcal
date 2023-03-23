@@ -34,6 +34,7 @@ export default function MacrosCalculator() {
     const weight = values[0].weight;
 
     function perHundredGram(value: number) {
+      if (weight === 0) return 0;
       return (value / weight) * 100;
     }
 
