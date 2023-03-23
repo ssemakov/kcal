@@ -33,4 +33,21 @@ describe("MacrosCalculator", () => {
     expect(screen.getByTestId("fat-1").textContent).toBe("50");
     expect(screen.getByTestId("carbs-1").textContent).toBe("50");
   });
+
+  it("calculates the macros values per 100 grams when the weight is 0", () => {
+    render(<MacrosCalculator />);
+    const weightInput = screen.getByTestId("weight");
+    const caloriesInput = screen.getByTestId("calories");
+    const proteinInput = screen.getByTestId("protein");
+    const fatInput = screen.getByTestId("fat");
+    const carbsInput = screen.getByTestId("carbs");
+
+    fireEvent.change(weightInput, { target: { value: "0" } });
+
+    expect(screen.getByTestId("weight-1").textContent).toBe("100");
+    expect(screen.getByTestId("calories-1").textContent).toBe("0");
+    expect(screen.getByTestId("protein-1").textContent).toBe("0");
+    expect(screen.getByTestId("fat-1").textContent).toBe("0");
+    expect(screen.getByTestId("carbs-1").textContent).toBe("0");
+  });
 });
