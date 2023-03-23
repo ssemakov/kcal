@@ -36,7 +36,7 @@ export default function Home({ description }: ContentProps) {
         </article>
         <Accordion collapseAll={true} alwaysOpen={true} flush={true}>
           <Accordion.Panel className="py-0">
-            <Accordion.Title>What is it?</Accordion.Title>
+            <Accordion.Title>{description.title}</Accordion.Title>
             <Accordion.Content>
               <article className="prose prose-gray pt-4 prose-p:indent-4">
                 <div
