@@ -1,10 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Accordion } from "flowbite-react";
 import { Inter } from "next/font/google";
-import styles from "@styles/Home.module.css";
-import MacrosCalculator from "@components/MacrosCalculator";
 import { getContent, ContentData } from "@lib/content";
+import Ingredients from "@components/Ingredients";
+import MacrosCalculator from "@components/MacrosCalculator";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,13 +39,18 @@ export default function Home({ description }: ContentProps) {
             <Accordion.Content>
               <article className="prose prose-gray pt-4 prose-p:indent-4">
                 <div
-                  dangerouslySetInnerHTML={{ __html: description.contentHtml }}
+                  dangerouslySetInnerHTML={{
+                    __html: description.contentHtml,
+                  }}
                 />
               </article>
             </Accordion.Content>
           </Accordion.Panel>
         </Accordion>
-        <div className="pt-2 sm:pt-8">
+        <div className="mt-5 p-2 shadow-md sm:pt-8">
+          <Ingredients />
+        </div>
+        <div className="mt-5 p-2 shadow-md sm:pt-8">
           <MacrosCalculator />
         </div>
       </div>

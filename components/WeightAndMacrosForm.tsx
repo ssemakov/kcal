@@ -1,9 +1,7 @@
-import Button from "@components/Button";
 import Input, {
   BottomStaticAdornment,
   RightStaticAdornment,
 } from "@components/Input";
-import WeightUnitsAdornment from "@components/WeightUnitsAdornment";
 
 export interface OnChangeParams {
   id: string;
